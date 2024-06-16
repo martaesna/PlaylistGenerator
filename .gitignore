@@ -110,7 +110,6 @@ Thumbs.db
 *.key
 
 # Ignore public folder except for images
-!/public/assets/images
 
 # Others
 .vscode/

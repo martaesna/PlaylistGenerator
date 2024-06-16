@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/SpotifyPlaylistGenerator/static/css/main.95cfa0b7.css",
-    "main.js": "/SpotifyPlaylistGenerator/static/js/main.0f3c0945.js",
-    "index.html": "/SpotifyPlaylistGenerator/index.html",
-    "main.95cfa0b7.css.map": "/SpotifyPlaylistGenerator/static/css/main.95cfa0b7.css.map",
-    "main.0f3c0945.js.map": "/SpotifyPlaylistGenerator/static/js/main.0f3c0945.js.map"
+    "main.css": "/PlaylistGenerator/static/css/main.95cfa0b7.css",
+    "main.js": "/PlaylistGenerator/static/js/main.0b6f3504.js",
+    "index.html": "/PlaylistGenerator/index.html",
+    "main.95cfa0b7.css.map": "/PlaylistGenerator/static/css/main.95cfa0b7.css.map",
+    "main.0b6f3504.js.map": "/PlaylistGenerator/static/js/main.0b6f3504.js.map"
   },
   "entrypoints": [
     "static/css/main.95cfa0b7.css",
-    "static/js/main.0f3c0945.js"
+    "static/js/main.0b6f3504.js"
   ]
 }

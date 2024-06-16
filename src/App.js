@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Questions from './components/Questions';
 import Callback from './components/Callback';
 
 const App = () => {
   const [token, setToken] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
     const hash = window.location.hash;
