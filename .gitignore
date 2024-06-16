@@ -109,10 +109,6 @@ Thumbs.db
 *.pfx
 *.key
 
-# React
-build/
-public/
-
 # Ignore public folder except for images
 !/public/assets/images
 
