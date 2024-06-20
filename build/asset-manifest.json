@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/PlaylistGenerator/static/css/main.95cfa0b7.css",
-    "main.js": "/PlaylistGenerator/static/js/main.0991c995.js",
+    "main.js": "/PlaylistGenerator/static/js/main.d02ede98.js",
     "index.html": "/PlaylistGenerator/index.html",
     "main.95cfa0b7.css.map": "/PlaylistGenerator/static/css/main.95cfa0b7.css.map",
-    "main.0991c995.js.map": "/PlaylistGenerator/static/js/main.0991c995.js.map"
+    "main.d02ede98.js.map": "/PlaylistGenerator/static/js/main.d02ede98.js.map"
   },
   "entrypoints": [
     "static/css/main.95cfa0b7.css",
-    "static/js/main.0991c995.js"
+    "static/js/main.d02ede98.js"
   ]
 }
