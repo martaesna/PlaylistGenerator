@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { exchangeCodeForToken } from '../api';
-import axios from 'axios';
-
 
 const Callback = () => {
   const navigate = useNavigate();
@@ -14,21 +12,24 @@ const Callback = () => {
     const state = urlParams.get('state');
     const storedState = window.localStorage.getItem('spotify_auth_state');
 
-    if (state !== storedState) {
-      navigate('/?error=state_mismatch');
-    } else {
-      window.localStorage.removeItem('spotify_auth_state');
-      axios.post('https://ancient-reaches-96103-ae8ed803e107.herokuapp.com/callback', { code })
-        .then(response => {
-          const { access_token } = response.data;
+    const exchangeToken = async () => {
+      if (state !== storedState) {
+        console.log('upsss errorr');
+        navigate('/?error=state_mismatch');
+      } else {
+        window.localStorage.removeItem('spotify_auth_state');
+        try {
+          const access_token = await exchangeCodeForToken(code);
           window.localStorage.setItem('token', access_token);
           navigate('/questions');
-        })
-        .catch(error => {
-          console.error('Error during callback:', error);
+        } catch (error) {
+          console.error('Error exchanging code for token:', error);
           navigate('/?error=invalid_token');
-        });
-    }
+        }
+      }
+    };
+
+    exchangeToken();
   }, [navigate]);
 
   return <div>Loading...</div>;

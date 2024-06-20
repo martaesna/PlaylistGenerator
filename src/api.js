@@ -13,20 +13,32 @@ export const getClientId = async () => {
     }
   };
   
-  export const exchangeCodeForToken = async (code) => {
-    const response = await axios.post(
-        `${API_URL}/callback`,
-        { code },
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-      console.log('access token at api.js: ' + response.data);
-      const { access_token } = response.data;
-      return access_token;
+const SPOTIFY_API_URL = 'https://accounts.spotify.com/api/token';
+const CLIENT_ID = '36a1301d6d5e427695b9f73ee58d560c';
+const CLIENT_SECRET = 'ac208a136d6e43c7bb0ebbca61b703ff';
+
+export const exchangeCodeForToken = async (code) => {
+  const redirectUri = 'https://martaesna.github.io/PlaylistGenerator/callback';
+  const params = new URLSearchParams();
+  params.append('grant_type', 'authorization_code');
+  params.append('code', code);
+  params.append('redirect_uri', redirectUri);
+
+  const headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET)
   };
+
+  try {
+    const response = await axios.post(SPOTIFY_API_URL, params, { headers });
+    console.log('Response from Spotify:', response.data);
+    const { access_token } = response.data;
+    return access_token;
+  } catch (error) {
+    console.error('Error exchanging code for token:', error.response?.data || error.message);
+    throw error;
+  }
+};
   
   export const createPlaylist = async (answers, spotifyToken) => {
     try {
