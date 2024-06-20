@@ -19,6 +19,8 @@ const Callback = () => {
       } else {
         window.localStorage.removeItem('spotify_auth_state');
         try {
+          console.log('estem aquí');
+
           const access_token = await exchangeCodeForToken(code);
           window.localStorage.setItem('token', access_token);
           navigate('/questions');
