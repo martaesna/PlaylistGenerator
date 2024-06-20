@@ -14,10 +14,13 @@ const Callback = () => {
 
     const exchangeToken = async () => {
       if (state !== storedState) {
+        console.log('upsss errorr');
         navigate('/?error=state_mismatch');
       } else {
         window.localStorage.removeItem('spotify_auth_state');
         try {
+          console.log('arribem al exchange');
+
           const accessToken = await exchangeCodeForToken(code);
           window.localStorage.setItem('token', accessToken);
           navigate('/questions');

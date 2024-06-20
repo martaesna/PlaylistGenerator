@@ -23,7 +23,7 @@ export const getClientId = async () => {
           }
         }
       );
-  
+      console.log('access token at api.js: ' + response.data);
       const { access_token } = response.data;
       return access_token;
   };
