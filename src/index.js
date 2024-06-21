@@ -8,7 +8,7 @@ const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <Router basename="/PlaylistGenerator">
+  <Router>
     <App />
   </Router>
 );
